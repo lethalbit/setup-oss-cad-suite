@@ -30,7 +30,20 @@ steps:
 - run: yosys --version
 ```
 
-**HINT:** This can be combined with the [`@actions/cache`](https://github.com/actions/toolkit/tree/main/packages/cache) action to cache the download to speed up subsequent CI runs.
+### Cache a specific release of the tools
+
+This is just like the setup above, but adds the `cache` option to tell the action to use a cached version of the tools if found, and if not it will add them to the cache automatically.
+
+```yaml
+steps:
+- uses: actions/checkout@v3
+- uses: YosysHQ/setup-oss-cad-suite@v2
+  with:
+    version: '2021-05-28'
+    cache: true
+- run: yosys --version
+```
+
 
 ### Use `GITHUB_TOKEN` to prevent API rate limiting
 

@@ -15,6 +15,9 @@ inputs:
   python-override:
     description: Use Python3 provided with OSS CAD Suite
     default: false
+  cache:
+    description: Cache the downloaded version of OSS CAD Suite, only works when you explicitly specify a version.
+    default: false
 runs:
   using: node16
   main: dist/index.js

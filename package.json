@@ -1,6 +1,6 @@
 {
   "name": "setup-oss-cad-suite",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "ISC",
   "private": true,
   "description": "Setup the YosysHQ OSS CAD Suite",

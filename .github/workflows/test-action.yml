@@ -47,6 +47,26 @@ jobs:
           verilator --version
           yices --version | head -1
           python --version
+  test-action-cached:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          version: '2023-02-17'
+          cache: true
+      - name: Tool Versions
+        shell: bash
+        run: |
+          yosys --version
+          sby --help | head -1
+          nextpnr-ice40 --version
+          nextpnr-ecp5 --version
+          nextpnr-nexus --version
+          verilator --version
+          yices --version | head -1
+          python --version
   test-action-python:
     runs-on: ubuntu-latest
     steps:
