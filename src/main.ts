@@ -191,7 +191,9 @@ async function main(): Promise<void> {
 					file, pkg_name, 'oss-cad-suite', tag, arch
 				)
 				// Extract the package
-				const suite_path = await extractPackage(pkg_file, pkg_dir, os)
+				const suite_path = await extractPackage(
+					core.toPlatformPath(`${pkg_file}/${pkg_name}`), pkg_dir, os
+				)
 				// Set things up
 				setupEnvironment(suite_path)
 			}
